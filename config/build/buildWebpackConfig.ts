@@ -21,7 +21,7 @@ export function buildWebpackConfig(
 
         //Loader - для обработки файлов, которые выходят за пределы JS (PNG,SVG,TS и др)
         module: {
-            rules: buildLoaders(),
+            rules: buildLoaders(options),
         },
         resolve: buildResolvers(),
         devtool: isDev ? "inline-source-map" : undefined,
