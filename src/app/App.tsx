@@ -1,24 +1,16 @@
-import { Suspense, useContext } from "react";
-import { Routes, Route, Link } from "react-router-dom";
-import { AboutPage } from "../pages/AboutPage";
+import { Link } from "react-router-dom";
 import "./styles/index.scss";
-import { MainPage } from "../pages/MainPage";
 import { useTheme } from "./providers/ThemeProvider/lib/useTheme";
-import { className } from "../shared/lib/classNames/className";
+import { classNames } from "../shared/lib/classNames/className";
+import { AppRouter } from "./providers/RouterApp";
+import { Navbar } from "widgets/Navbar";
 
 export const App = () => {
-    const { theme, toggleTheme } = useTheme();
+    const { theme } = useTheme();
     return (
-        <div className={className("app", { hovered: true }, [theme, "test"])}>
-            <button onClick={toggleTheme}>Change Theme</button>
-            <Link to="/">Main</Link>
-            <Link to="/about">About</Link>
-            <Suspense fallback={<div>Loading...</div>}>
-                <Routes>
-                    <Route path="/about" element={<AboutPage />} />
-                    <Route path="/" element={<MainPage />} />
-                </Routes>
-            </Suspense>
+        <div className={classNames("app", { hovered: true }, [theme, "test"])}>
+            <Navbar />
+            <AppRouter />
         </div>
     );
 };
