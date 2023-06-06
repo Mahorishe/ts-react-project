@@ -1,5 +1,8 @@
 {
   "Пример": "Example",
   "Перевод": "Translate",
-  "Страница не найдена": "Page not found"
+  "Страница не найдена": "Page not found",
+  "Возникла непредвиденная ошибка": "An unexpected error has occurred",
+  "Обновить страницу": "Reload page",
+  "Вызвать ошибку": "Call error"
 }
