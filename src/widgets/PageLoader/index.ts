@@ -1,2 +1,3 @@
-import { PageLoader } from "./ui/PageLoader";
-export {PageLoader}
+import { PageLoader } from './ui/PageLoader';
+
+export { PageLoader };
