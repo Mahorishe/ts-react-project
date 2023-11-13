@@ -1,7 +1,7 @@
 import webpack from 'webpack';
 import MiniCssExtractPlugin from 'mini-css-extract-plugin';
 import { BuildOptions } from './types/config';
-import {buildCssLoader} from "./loaders/buildCssLoader";
+import { buildCssLoader } from './loaders/buildCssLoader';
 
 export function buildLoaders({ isDev }: BuildOptions): webpack.RuleSetRule[] {
     const fileLoader = {
@@ -26,7 +26,7 @@ export function buildLoaders({ isDev }: BuildOptions): webpack.RuleSetRule[] {
             },
         },
     };
-    const cssLoader = buildCssLoader(isDev)
+    const cssLoader = buildCssLoader(isDev);
 
     const typescriptLoader = {
         test: /\.tsx?$/, // файлы каких расширений обрабатываем

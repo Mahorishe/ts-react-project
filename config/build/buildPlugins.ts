@@ -22,10 +22,10 @@ export function buildPlugins({
         }),
     ];
 
-    if(isDev) {
-        plugins.push( new BundleAnalyzerPlugin({
+    if (isDev) {
+        plugins.push(new BundleAnalyzerPlugin({
             openAnalyzer: false,
-        }),)
+        }));
     }
-    return plugins
+    return plugins;
 }
