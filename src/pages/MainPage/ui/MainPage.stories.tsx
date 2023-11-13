@@ -1,14 +1,11 @@
-import type {Meta, StoryObj} from '@storybook/react';
-import {ThemeDecorator} from "shared/config/storybook/ThemeDecorator/ThemeDecorator";
-import {Theme} from "app/providers/ThemeProvider";
-import MainPage from "pages/MainPage/ui/MainPage";
+import type { Meta, StoryObj } from '@storybook/react';
+import { ThemeDecorator } from 'shared/config/storybook/ThemeDecorator/ThemeDecorator';
+import { Theme } from 'app/providers/ThemeProvider';
+import MainPage from 'pages/MainPage/ui/MainPage';
 
 const meta: Meta<typeof MainPage> = {
     title: 'pages/MainPage',
     component: MainPage,
-    parameters: {
-        layout: 'centered',
-    },
     tags: ['autodocs'],
 };
 export default meta;
@@ -23,5 +20,4 @@ export const MainPageDark: Story = {
     },
 };
 
-
-MainPageDark.decorators = [ThemeDecorator(Theme.DARK)]
+MainPageDark.decorators = [ThemeDecorator(Theme.DARK)];

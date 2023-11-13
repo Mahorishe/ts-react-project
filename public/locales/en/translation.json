@@ -1,8 +1,11 @@
 {
   "Пример": "Example",
-  "Перевод": "Translate",
+  "Мини язык": "En",
+  "Язык": "English",
   "Страница не найдена": "Page not found",
   "Возникла непредвиденная ошибка": "An unexpected error has occurred",
   "Обновить страницу": "Reload page",
-  "Вызвать ошибку": "Call error"
+  "Вызвать ошибку": "Call error",
+  "Главная": "Main",
+  "О сайте": "About site"
 }
