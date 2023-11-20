@@ -18,10 +18,17 @@ export const Primary: Story = {
         children: 'Button',
     },
 };
-export const ClearBtn: Story = {
+export const Clear: Story = {
     args: {
         children: 'Button',
         theme: ButtonTheme.CLEAR,
+    },
+};
+
+export const ClearInverted: Story = {
+    args: {
+        children: 'Button',
+        theme: ButtonTheme.CLEAR_INVERTED,
     },
 };
 export const Outline: Story = {
