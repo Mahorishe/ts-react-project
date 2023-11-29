@@ -6,7 +6,6 @@ import { memo, useCallback } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { loginActions } from 'features/AuthByUsername/model/slice/loginSlice';
 import { Text } from 'shared/ui/Text';
-import { Simulate } from 'react-dom/test-utils';
 import { TextTheme } from 'shared/ui/Text/ui/Text';
 import cls from './LoginForm.module.scss';
 import { getLoginState } from '../../model/selectors/getLoginState/getLoginState';
@@ -16,7 +15,7 @@ interface LoginFormProps {
     className?: string
 }
 
-export const LoginForm = (props: LoginFormProps) => {
+export const LoginForm = memo((props: LoginFormProps) => {
     const {
         className,
     } = props;
@@ -64,4 +63,4 @@ export const LoginForm = (props: LoginFormProps) => {
             </Button>
         </div>
     );
-};
+});
