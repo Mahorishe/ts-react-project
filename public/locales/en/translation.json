@@ -7,5 +7,10 @@
   "Обновить страницу": "Reload page",
   "Вызвать ошибку": "Call error",
   "Главная": "Main",
-  "О сайте": "About site"
+  "О сайте": "About site",
+  "Форма авторизации": "Auth Form",
+  "Войти": "Enter",
+  "Выйти": "Quit",
+  "Введите никнейм": "Enter nickname",
+  "Введите пароль": "Enter password"
 }
