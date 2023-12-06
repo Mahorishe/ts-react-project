@@ -7,10 +7,16 @@ import { useDispatch, useSelector, useStore } from 'react-redux';
 import { loginActions, loginReducer } from 'features/AuthByUsername/model/slice/loginSlice';
 import { Text } from 'shared/ui/Text';
 import { TextTheme } from 'shared/ui/Text/ui/Text';
-import { getLoginUsernameState } from 'features/AuthByUsername/model/selectors/getLoginUsernameState';
-import { getLoginPasswordState } from 'features/AuthByUsername/model/selectors/getLoginPasswordState';
-import { getLoginIsLoadingState } from 'features/AuthByUsername/model/selectors/getLoginIsLoadingState';
-import { getLoginErrorState } from 'features/AuthByUsername/model/selectors/getLoginErrorState';
+import {
+    getLoginUsernameState,
+} from 'features/AuthByUsername/model/selectors/getLoginUsernameState/getLoginUsernameState';
+import {
+    getLoginPasswordState,
+} from 'features/AuthByUsername/model/selectors/getLoginPasswordState/getLoginPasswordState';
+import {
+    getLoginIsLoadingState,
+} from 'features/AuthByUsername/model/selectors/getLoginIsLoadingState/getLoginIsLoadingState';
+import { getLoginErrorState } from 'features/AuthByUsername/model/selectors/getLoginErrorState/getLoginErrorState';
 import { ReduxStoreWithManager } from 'app/providers/StoreProvider';
 import { DynamicReducerLoader, ReducersList } from 'shared/lib/components/DynamicReducerModule';
 import { loginByUsername } from '../../model/services/loginByUsername/loginByUsername';
