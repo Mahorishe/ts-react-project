@@ -2,13 +2,14 @@ import { classNames } from 'shared/lib/classNames/classNames';
 import { Button } from 'shared/ui/Button';
 import { ButtonTheme } from 'shared/ui/Button/ui/Button';
 import { useTranslation } from 'react-i18next';
+import { memo } from 'react';
 
 interface LangSwitherProps {
   className?: string;
   short?: boolean
 }
 
-export const LangSwither = ({ className, short }: LangSwitherProps) => {
+export const LangSwither = memo(({ className, short }: LangSwitherProps) => {
     const { t, i18n } = useTranslation();
 
     const onToggle = () => {
@@ -19,4 +20,4 @@ export const LangSwither = ({ className, short }: LangSwitherProps) => {
             <Button theme={ButtonTheme.CLEAR} onClick={onToggle}>{t(short ? 'Мини язык' : 'Язык')}</Button>
         </div>
     );
-};
+});

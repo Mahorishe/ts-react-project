@@ -5,7 +5,16 @@
   "comments": [
     { "id": 1, "body": "some comment", "postId": 1 }
   ],
-  "profile": { "name": "typicode" },
+  "profile": {
+    "firstname": "Sergey",
+    "lastname": "Zhirnov",
+    "age": 26,
+    "currency": "RUB",
+    "country": "Russia",
+    "city": "Kaliningrad",
+    "username": "admin",
+    "avatar": "https://png.pngtree.com/thumb_back/fh260/background/20230611/pngtree-an-avatar-in-a-dark-background-with-red-eyes-image_2914141.jpg"
+  },
   "users": [
     {
       "id": 1,
