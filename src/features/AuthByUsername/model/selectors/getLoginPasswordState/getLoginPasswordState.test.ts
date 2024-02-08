@@ -1,5 +1,3 @@
-import { fireEvent, getByTestId, screen } from '@testing-library/react';
-import { DeepPartial } from '@reduxjs/toolkit';
 import { StateSchema } from 'app/providers/StoreProvider';
 import {
     getLoginPasswordState,
