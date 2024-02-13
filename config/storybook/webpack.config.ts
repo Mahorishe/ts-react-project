@@ -16,6 +16,8 @@ export default ({ config }: {config: webpack.Configuration}) => {
         'entities/User': path.resolve(__dirname, '..', '..', 'src', 'entities', 'User'),
         'entities/Counter': path.resolve(__dirname, '..', '..', 'src', 'entities', 'Counter'),
         'entities/Profile': path.resolve(__dirname, '..', '..', 'src', 'entities', 'Profile'),
+        'entities/Currency': path.resolve(__dirname, '..', '..', 'src', 'entities', 'Currency'),
+        'entities/Country': path.resolve(__dirname, '..', '..', 'src', 'entities', 'Country'),
     };
     config!.resolve!.extensions!.push('.ts', '.tsx');
     // eslint-disable-next-line no-param-reassign
