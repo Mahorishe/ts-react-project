@@ -6,7 +6,7 @@ import { useSelector } from 'react-redux';
 import { getProfileReadonly, profileActions } from 'entities/Profile';
 import { useCallback } from 'react';
 import { useAppDispatch } from 'shared/lib/hooks/useAppDispacth';
-import { updateProfileData } from 'entities/Profile/model/services/updateProfileData';
+import { updateProfileData } from 'entities/Profile/model/services/updateProfileData/updateProfileData';
 import cls from './ProfilePageHandler.module.scss';
 
 interface ProfilePageHandlerProps {
@@ -24,7 +24,7 @@ export const ProfilePageHandler = (props: ProfilePageHandlerProps) => {
     }, [dispatch]);
 
     const handleCancelEdit = useCallback(() => {
-        dispatch(profileActions.setReadonlyProfile(true));
+        dispatch(profileActions.cancelEditData());
     }, [dispatch]);
 
     const handleSaveChanges = useCallback(() => {

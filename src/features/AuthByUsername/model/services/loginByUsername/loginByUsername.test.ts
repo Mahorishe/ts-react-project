@@ -1,8 +1,7 @@
-import axios from 'axios';
 import { StateSchema } from 'app/providers/StoreProvider';
 import { Dispatch } from '@reduxjs/toolkit';
 import { userActions } from 'entities/User';
-import { TestAsyncFunc } from 'shared/lib/tests/TestAsyncFunc/TestAsyncFunc';
+import { TestAsyncThunk } from 'shared/lib/tests/TestAsyncFunc/TestAsyncFunc';
 import { loginByUsername } from './loginByUsername';
 
 describe('loginByUsername.test', () => {
@@ -15,7 +14,7 @@ describe('loginByUsername.test', () => {
     test('Success Login', async () => {
         const userData = { username: '123', id: '1' };
 
-        const thunk = new TestAsyncFunc(loginByUsername);
+        const thunk = new TestAsyncThunk(loginByUsername);
         thunk.api.post.mockReturnValue(Promise.resolve({ data: userData }));
         const result = await thunk.callThunk({ username: '123', password: '123' });
         expect(thunk.dispatch).toBeCalledTimes(3);
@@ -25,7 +24,7 @@ describe('loginByUsername.test', () => {
         expect(result.payload).toEqual(userData);
     });
     test('Error Login', async () => {
-        const thunk = new TestAsyncFunc(loginByUsername);
+        const thunk = new TestAsyncThunk(loginByUsername);
         thunk.api.post.mockReturnValue(Promise.resolve({ status: 403 }));
         const result = await thunk.callThunk({ username: '123', password: '123' });
         expect(thunk.dispatch).toBeCalledTimes(2);

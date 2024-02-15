@@ -1,11 +1,15 @@
 import { useTranslation } from 'react-i18next';
 import { DynamicReducerLoader, ReducersList } from 'shared/lib/components/DynamicReducerModule';
 import {
-    profileReducer,
     fetchProfileData,
-    ProfileCard,
+    getProfileError,
+    getProfileFormData,
     getProfileIsLoading,
-    getProfileError, getProfileFormData, getProfileReadonly, profileActions,
+    getProfileReadonly,
+    getProfileValidationErrors,
+    profileActions,
+    ProfileCard,
+    profileReducer, ValidateProfileErrors,
 } from 'entities/Profile';
 import { useCallback, useEffect } from 'react';
 import { useAppDispatch } from 'shared/lib/hooks/useAppDispacth';
@@ -13,6 +17,8 @@ import { classNames } from 'shared/lib/classNames/classNames';
 import { useSelector } from 'react-redux';
 import { Currency } from 'entities/Currency';
 import { Country } from 'entities/Country';
+import { Text } from 'shared/ui/Text';
+import { TextTheme } from 'shared/ui/Text/ui/Text';
 import { ProfilePageHandler } from '../ui/ProfilePageHandler/ProfilePageHandler';
 
 const initialReducer: ReducersList = {
@@ -24,12 +30,21 @@ interface ProfilePageProps {
 }
 const ProfilePage = (props: ProfilePageProps) => {
     const { className } = props;
-    const { t } = useTranslation();
+    const { t } = useTranslation('profile');
     const dispatch = useAppDispatch();
     const formData = useSelector(getProfileFormData);
     const isLoading = useSelector(getProfileIsLoading);
     const error = useSelector(getProfileError);
     const readonly = useSelector(getProfileReadonly);
+    const validateErrors = useSelector(getProfileValidationErrors);
+
+    const validateErrorsTranslates = {
+        [ValidateProfileErrors.NO_DATA]: t('Данные отсутствуют'),
+        [ValidateProfileErrors.INCORRECT_DATA]: t('Имя и фамилия обязательны к заполненению'),
+        [ValidateProfileErrors.INCORRECT_AGE]: t('Неверно указан возраст'),
+        [ValidateProfileErrors.INCORRECT_USERNAME]: t('Никнейм пользователя обязателен к заполнению'),
+        [ValidateProfileErrors.SERVER_ERROR]: t('Серверная ошибка'),
+    };
 
     useEffect(() => {
         dispatch(fetchProfileData());
@@ -71,6 +86,9 @@ const ProfilePage = (props: ProfilePageProps) => {
         <DynamicReducerLoader reducers={initialReducer} removeAfterUnmount>
             <div className={classNames('', {}, [className])}>
                 <ProfilePageHandler />
+                {validateErrors && validateErrors.map((error) => (
+                    <Text key={error} theme={TextTheme.ERROR} text={validateErrorsTranslates[error]} />
+                ))}
                 <ProfileCard
                     data={formData}
                     error={error}
