@@ -1,16 +1,24 @@
 {
   "posts": [
-    { "id": 1, "title": "json-server", "author": "typicode" }
+    {
+      "id": 1,
+      "title": "json-server",
+      "author": "typicode"
+    }
   ],
   "comments": [
-    { "id": 1, "body": "some comment", "postId": 1 }
+    {
+      "id": 1,
+      "body": "some comment",
+      "postId": 1
+    }
   ],
   "profile": {
     "firstname": "Sergey",
     "lastname": "Zhirnov",
-    "age": 26,
-    "currency": "RUB",
-    "country": "Russia",
+    "age": 245,
+    "currency": "EUR",
+    "country": "Japan",
     "city": "Kaliningrad",
     "username": "admin",
     "avatar": "https://png.pngtree.com/thumb_back/fh260/background/20230611/pngtree-an-avatar-in-a-dark-background-with-red-eyes-image_2914141.jpg"
