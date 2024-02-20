@@ -1,4 +1,3 @@
-import { TestAsyncFunc } from 'shared/lib/tests/TestAsyncFunc/TestAsyncFunc';
 import { Currency } from 'entities/Currency';
 import { Country } from 'entities/Country';
 import { ValidateProfileErrors } from '../../types/profile';

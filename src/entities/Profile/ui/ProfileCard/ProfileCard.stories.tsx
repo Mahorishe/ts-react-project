@@ -5,6 +5,7 @@ import { StoreDecorator } from 'shared/config/storybook/StoreDecorator/StoreDeco
 import { ProfileCard } from 'entities/Profile';
 import { Currency } from 'entities/Currency';
 import { Country } from 'entities/Country';
+import AvatarPhoto from 'shared/assets/tests/AvatarJS.png';
 
 const meta: Meta<typeof ProfileCard> = {
     title: 'entities/ProfileCard',
@@ -22,6 +23,7 @@ export const Profile: Story = {
             username: 'Alduin',
             currency: Currency.USD,
             country: Country.USA,
+            avatar: AvatarPhoto,
         },
     },
 };
@@ -35,6 +37,7 @@ export const ProfileDark: Story = {
             username: 'Alduin',
             currency: Currency.USD,
             country: Country.USA,
+            avatar: AvatarPhoto,
         },
     },
 };
